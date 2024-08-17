@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  margin: 0;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  perspective: 1000px;
+}
+
+.name {
+  font-size: 3rem;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(-100px) rotateX(90deg);
+  animation: dropIn 1.5s forwards;
+  animation-delay: calc(0.2s * var(--order));
+}
+
+.name:nth-child(1) {
+  --order: 0;
+}
+.name:nth-child(2) {
+  --order: 1;
+}
+.name:nth-child(3) {
+  --order: 2;
+}
+.name:nth-child(4) {
+  --order: 3;
+}
+.name:nth-child(5) {
+  --order: 4;
+}
+
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) rotateX(90deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
